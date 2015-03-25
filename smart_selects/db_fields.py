@@ -46,7 +46,7 @@ class ChainedForeignKey(ForeignKey):
         return super(ChainedForeignKey, self).formfield(**defaults)
 
 
-class GroupedForeignKey(ForeignKey):
+class GroupedForeignKey(ManyToManyField):
     """
     Opt Grouped Field
     """
@@ -64,7 +64,7 @@ class GroupedForeignKey(ForeignKey):
             'order_field': self.group_field,
         }
         defaults.update(kwargs)
-        return super(ManyToManyField).formfield(**defaults)
+        return super(ManyToManyField, self).formfield(**defaults)
 
 if has_south:
     rules_grouped = [(
