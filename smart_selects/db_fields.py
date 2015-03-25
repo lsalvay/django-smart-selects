@@ -53,7 +53,7 @@ class GroupedForeignKey(ForeignKey):
     def __init__(self, to, group_field, **kwargs):
         self.group_field = group_field
         self._choices = True
-        ForeignKey.__init__(self, to, **kwargs)
+        ManyToManyField.__init__(self, to, **kwargs)
 
     def formfield(self, **kwargs):
         defaults = {
@@ -64,7 +64,7 @@ class GroupedForeignKey(ForeignKey):
             'order_field': self.group_field,
         }
         defaults.update(kwargs)
-        return super(ForeignKey, self).formfield(**defaults)
+        return super(ManyToMany, self).formfield(**defaults)
 
 if has_south:
     rules_grouped = [(
