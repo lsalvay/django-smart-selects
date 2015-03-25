@@ -1,4 +1,4 @@
-from django.db.models.fields.related import ForeignKey, ManyToManyField
+from django.db.models.fields.related import ForeignKey, ManyToMany
 from django.utils import six
 
 try:
