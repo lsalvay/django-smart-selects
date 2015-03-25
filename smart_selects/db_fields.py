@@ -53,7 +53,7 @@ class GroupedForeignKey(ForeignKey):
     def __init__(self, to, group_field, **kwargs):
         self.group_field = group_field
         self._choices = True
-        ManyToManyField.__init__(self, to, **kwargs)
+        ManyToMany.__init__(self, to, **kwargs)
 
     def formfield(self, **kwargs):
         defaults = {
