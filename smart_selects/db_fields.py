@@ -64,7 +64,7 @@ class GroupedForeignKey(ForeignKey):
             'order_field': self.group_field,
         }
         defaults.update(kwargs)
-        return super(ManyToManyField, self).formfield(**defaults)
+        return super(ManyToManyField).formfield(**defaults)
 
 if has_south:
     rules_grouped = [(
