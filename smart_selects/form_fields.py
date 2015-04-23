@@ -1,6 +1,6 @@
 from django.db.models import get_model
-from django.forms.models import ModelChoiceField
-from django.forms import ChoiceField
+from django.forms.models import ModelChoiceField, ModelMultipleChoiceField
+from django.forms import ChoiceField, MultipleChoiceField
 from django.utils.encoding import force_text
 
 from smart_selects.widgets import ChainedSelect
