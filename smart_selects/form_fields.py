@@ -31,7 +31,7 @@ class ChainedModelChoiceField(ModelChoiceField):
     choices = property(_get_choices, ChoiceField._set_choices)
 
 
-class GroupedModelSelect(ModelChoiceField):
+class GroupedModelSelect(ModelMultipleChoiceField):
     def __init__(self, queryset, order_field, *args, **kwargs):
         self.order_field = order_field
         super(GroupedModelSelect, self).__init__(queryset, *args, **kwargs)
