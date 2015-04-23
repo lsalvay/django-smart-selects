@@ -60,7 +60,7 @@ class GroupedForeignKey(ManyToManyField):
             'form_class': form_fields.GroupedModelSelect,
             'queryset': self.rel.to._default_manager.complex_filter(
                                                     self.rel.limit_choices_to),
-            'to_field_name': self.rel.field_name,
+            'to_field_name': "self.rel.field_name",
             'order_field': self.group_field,
         }
         defaults.update(kwargs)
